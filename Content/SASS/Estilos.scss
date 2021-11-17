@@ -4,10 +4,10 @@
 @import 'base/variables';
 //Normalize.css (Externo)
 @import 'base/normalice';
-//Hoja de fuentes
-@import 'base/fonts';
 //Hoja de estilo de layout. Aqui se guarda todo el estilo que implemente el layout de la página
 @import 'base/layout';
+//Hoja de estilo de layout. Aqui se guarda todo el estilo que implemente el layout de la página
+@import 'Components/buttons';
 //Hoja de estilos base
 @import 'App/base';
 

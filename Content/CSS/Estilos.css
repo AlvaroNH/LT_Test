@@ -341,18 +341,19 @@ template {
   display: none;
 }
 
-@font-face {
-  font-family: "Merriwheater";
-  src: url("/Fonts/Merriweather-Regular.ttf") format("ttf");
-}
-
-@font-face {
-  font-family: "Montserrat";
-  src: url("/Fonts/Montserrat-Regular.ttf") format("ttf");
-}
-
 main {
-  height: 90vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 5vh auto 5vh;
+      grid-template-rows: 5vh auto 5vh;
+  height: 100vh;
+}
+
+.landingPage_backgroundContainer {
+  grid-row: 1 / -1;
+  grid-column: 1 / -1;
 }
 
 .landingPage_backgroundContainer .landingPage_backgroundRockImage {
@@ -362,12 +363,11 @@ main {
   z-index: -1;
   top: 5%;
   border: none;
-  left: -31%;
-}
-
-.landingPage_backgroundContainer .landingPage_backgroundRockImage img {
-  width: 100%;
-  height: 100%;
+  left: -30%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(transparent)), url(/Content/Img/rock.jpg), no-repeat;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, transparent 100%), url(/Content/Img/rock.jpg), no-repeat;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .landingPage_backgroundContainer .landingPage_backgroundImage {
@@ -386,48 +386,72 @@ main {
 }
 
 .landingPage_sliderContainer {
-  height: 65vh;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  grid-column: 1/-1;
+  height: 100%;
   display: -ms-grid;
   display: grid;
   z-index: 2;
-  margin-top: 7%;
   -ms-grid-rows: auto auto auto;
       grid-template-rows: auto auto auto;
-  -ms-grid-columns: 20vw 20vw 20vw 20vw 20vw;
-      grid-template-columns: 20vw 20vw 20vw 20vw 20vw;
-      grid-template-areas: "logo message . slider" "slogan slogan . slider" ". . control .";
+  -ms-grid-columns: 24vw 23vw 20vw 20vw 20vw;
+      grid-template-columns: 24vw 23vw 20vw 20vw 20vw;
+      grid-template-areas: "logo message . slider" "slogan slogan slogan slider" ". . control .";
 }
 
 .landingPage_sliderContainer .landingPage_logo {
   justify-self: flex-end;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: logo;
+  max-width: 220px;
+  width: 25vw;
 }
 
 .landingPage_sliderContainer .landingPage_message {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: message;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1 / 3;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 80%;
+  width: 100%;
+}
+
+.landingPage_sliderContainer .landingPage_message .message-primaryTitle {
+  font-size: 30px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.landingPage_sliderContainer .landingPage_message .icon-secondaryBar {
+  width: 94px;
+  height: 3px;
+  background-color: #19BD9C;
 }
 
 .landingPage_sliderContainer .landingPage_slogan {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-area: slogan;
-  justify-self: flex-end;
-  width: 60%;
-  line-height: 0.9em;
-}
-
-.landingPage_sliderContainer .landingPage_slogan2 {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
+  -ms-grid-column-span: 3;
   grid-area: slogan;
   -ms-grid-column-align: center;
       justify-self: center;
+  width: 65%;
+  margin: 0;
+}
+
+.landingPage_sliderContainer .landingPage_slogan h1 {
+  margin-top: 10px;
 }
 
 .landingPage_sliderContainer .landingPage_sliderControl {
@@ -443,6 +467,17 @@ main {
   grid-area: slider;
 }
 
+.ctaButton {
+  font-size: 20px;
+  font-weight: 600;
+  font-style: oblique;
+  background-color: #FF2A5C;
+  padding: 1em;
+  color: white;
+  text-decoration: none;
+  margin-top: 5%;
+}
+
 *, * + * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -453,13 +488,9 @@ body {
   color: white;
 }
 
-main {
-  min-height: 100vh;
-}
-
 h1 {
   font-family: "Montserrat", sans-serif;
-  font-size: 100px;
+  font-size: 90px;
 }
 
 h2, h3 {
@@ -467,6 +498,16 @@ h2, h3 {
 }
 
 h3 {
+  font-style: oblique;
+}
+
+h4 {
   font-style: italic;
+  font-size: 20px;
+}
+
+a {
+  font-family: "Merriwheater", serif;
+  font-style: initial;
 }
 /*# sourceMappingURL=Estilos.css.map */
