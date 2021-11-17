@@ -1,11 +1,15 @@
 //Hoja de estilos general
 
+//Hoja de variables
+@import 'base/variables';
 //Normalize.css (Externo)
-@import url(base/normalice);
+@import 'base/normalice';
 //Hoja de fuentes
-@import url(base/fonts);
+@import 'base/fonts';
+//Hoja de estilo de layout. Aqui se guarda todo el estilo que implemente el layout de la página
+@import 'base/layout';
 //Hoja de estilos base
-@import url(App/base);
+@import 'App/base';
 
 //Hoja de estilos de componente slider
 

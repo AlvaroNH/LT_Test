@@ -4,7 +4,22 @@
 }
 
 body{
-    background-color: #0A151F;
-
+    background-color: $background-color;
+    color: white;
+}
+main{
+    min-height: 100vh;;
 }
 
+h1{
+    font-family: "Montserrat", sans-serif;
+    font-size: 100px;
+}
+
+h2, h3{
+    font-family: "Merriwheater", serif;
+}
+
+h3{
+    font-style: italic;
+}
