@@ -1,0 +1,10 @@
+//Forzamos border-box en toda la aplicación con selector de buho lobotomizado
+*, *+* {
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #0A151F;
+
+}
+
