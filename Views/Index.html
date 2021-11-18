@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="icon" href="/Content/favicon/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://LT-test.com/" />
     <title>Leadtech front test</title>
@@ -15,12 +16,8 @@
     <meta property="og:url" content="https://LT-test.com.com/" />
     <meta property="og:image" content="https://LT-test.com.jpg" />
     <meta property="og:description" content="Leadtech front test" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="/Content/favicon/apple-touch-icon.png">
     <link rel="alternate" hreflang="es" href="https://LT-test.com/spanish/" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -32,8 +29,10 @@
 <body>
     <main>
         <section class="landingPage_backgroundContainer">
+
             <div class="landingPage_backgroundRockImage">
             </div>
+
             <div class="landingPage_backgroundImage">
                 <img src="/Content/img/background.jpg" alt="">
             </div>
@@ -41,31 +40,53 @@
         </section>
 
         <section class="landingPage_sliderContainer">
+
             <img class="landingPage_logo" src="/Content/img/logo.png" alt="Astronaut">
-            <div class="landingPage_message">
-                <img src="/Content/img/icon_rocket.png" alt="Launch off!">
-                <h4 class="message-primaryTitle">Your trip start here</h4>
-                <div class="icon-secondaryBar"></div>
-                <h4>#moontrip #visamoon</h4>
-            </div>
-            <div class="landingPage_slogan">
+
+            <article class="landingPage_messageLayout">
+                <div class="landingPage_messageContainer">
+                    <img src="/Content/img/icon_rocket.png" alt="Launch off!">
+                    <h4 class="message_primaryTitle">Your trip start here</h4>
+                    <div class="icon_secondaryBar"></div>
+                    <h4 class="message_hashtag">#moontrip #visamoon</h4>
+                </div>
+            </article>
+
+            <article class="landingPage_slogan">
                 <h1 class="">Visa to the moon</h1>
                 <h1 class="landingPage_slogan2" style="display: none">Explore the surface</h1>
-                <a href="#" class="ctaButton">Start your trip ></a>
-            </div>
+                <a href="#" onclick="return false;" class="ctaButton">Start your trip ></a>
+            </article>
 
-            <div class="landingPage_cta">
-            </div>
 
-            <div class="landingPage_sliderControl">
+            <article class="landingPage_sliderControl">
+                <div class="progress_container">
+                    <div class="progress_bar" data-val="0" style="max-width: 0%"></div>
+                    <div class="progress_background" style="max-width: 100%"></div>
+                </div>
+                <div class="slider_backContainer">
+                    <a href="#" onclick="triggerChange();return false;" class="sliderControl">prev</a>
+                </div>
+                <div class="slider_forwardContainer">
+                    <a href="#"
+                        onclick="triggerChange();return false;"
+                        class="sliderControl">next</a>
 
-            </div>
-            <div class="landingPage_sliderImage">
+                </div>
 
-            </div>
+            </article>
+
+            <article class="landingPage_sliderImage">
+                <div class="sliderImage_rocketPhoto" style="display:none"></div>
+                <div class="sliderImage_moonPhoto" style="display:none"></div>
+            </article>
+
         </section>
 
     </main>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="/Content/JS/slider.js" ></script>
+
 
 </html>

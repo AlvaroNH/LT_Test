@@ -5,9 +5,11 @@
 //Normalize.css (Externo)
 @import 'base/normalice';
 //Hoja de estilo de layout. Aqui se guarda todo el estilo que implemente el layout de la página
-@import 'base/layout';
-//Hoja de estilo de layout. Aqui se guarda todo el estilo que implemente el layout de la página
-@import 'Components/buttons';
+@import 'base/landing';
+//Hoja de estilo de para los enlaces y botones de la app.
+@import 'Components/links';
+//Hoja de estilo de componente barra de progreso
+@import 'Components/progress';
 //Hoja de estilos base
 @import 'App/base';
 

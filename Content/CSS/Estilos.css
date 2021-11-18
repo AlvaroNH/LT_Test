@@ -344,10 +344,10 @@ template {
 main {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  -ms-grid-rows: 5vh auto 5vh;
-      grid-template-rows: 5vh auto 5vh;
+  -ms-grid-columns: 100vw;
+      grid-template-columns: 100vw;
+  -ms-grid-rows: 2vh auto 5vh;
+      grid-template-rows: 2vh auto 5vh;
   height: 100vh;
 }
 
@@ -358,16 +358,16 @@ main {
 
 .landingPage_backgroundContainer .landingPage_backgroundRockImage {
   height: 90%;
-  width: 54.6vw;
+  width: 68.6%;
   position: absolute;
   z-index: -1;
-  top: 5%;
+  top: 2%;
   border: none;
-  left: -30%;
+  left: -25%;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(transparent)), url(/Content/Img/rock.jpg), no-repeat;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, transparent 100%), url(/Content/Img/rock.jpg), no-repeat;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 
 .landingPage_backgroundContainer .landingPage_backgroundImage {
@@ -376,7 +376,7 @@ main {
   position: absolute;
   z-index: -1;
   right: 5%;
-  top: 5%;
+  top: 2%;
   border: none;
 }
 
@@ -394,10 +394,10 @@ main {
   display: -ms-grid;
   display: grid;
   z-index: 2;
-  -ms-grid-rows: auto auto auto;
-      grid-template-rows: auto auto auto;
-  -ms-grid-columns: 24vw 23vw 20vw 20vw 20vw;
-      grid-template-columns: 24vw 23vw 20vw 20vw 20vw;
+  -ms-grid-rows: 35% auto 27%;
+      grid-template-rows: 35% auto 27%;
+  -ms-grid-columns: 24vw 25vw 23vw 26vw;
+      grid-template-columns: 24vw 25vw 23vw 26vw;
       grid-template-areas: "logo message . slider" "slogan slogan slogan slider" ". . control .";
 }
 
@@ -411,9 +411,11 @@ main {
   grid-area: logo;
   max-width: 220px;
   width: 25vw;
+  margin-right: 5em;
+  margin-top: -1em;
 }
 
-.landingPage_sliderContainer .landingPage_message {
+.landingPage_sliderContainer .landingPage_messageLayout {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: message;
@@ -427,16 +429,28 @@ main {
   width: 100%;
 }
 
-.landingPage_sliderContainer .landingPage_message .message-primaryTitle {
+.landingPage_sliderContainer .landingPage_messageLayout .landingPage_messageContainer {
+  padding: 3em 2.5em;
+}
+
+.landingPage_sliderContainer .landingPage_messageLayout .landingPage_messageContainer .message_primaryTitle {
   font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
   margin: 0;
   margin-bottom: 10px;
 }
 
-.landingPage_sliderContainer .landingPage_message .icon-secondaryBar {
+.landingPage_sliderContainer .landingPage_messageLayout .landingPage_messageContainer .icon_secondaryBar {
   width: 94px;
   height: 3px;
   background-color: #19BD9C;
+}
+
+.landingPage_sliderContainer .landingPage_messageLayout .landingPage_messageContainer .message_hashtag {
+  margin-top: 0.5em;
+  font-size: 25px;
+  width: 50%;
 }
 
 .landingPage_sliderContainer .landingPage_slogan {
@@ -458,6 +472,36 @@ main {
   -ms-grid-row: 3;
   -ms-grid-column: 3;
   grid-area: control;
+  background-color: #242937;
+  height: 105%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[5];
+      grid-template-columns: repeat(5, auto);
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: ". progress progress progress ." ". back . forward .";
+}
+
+.landingPage_sliderContainer .landingPage_sliderControl .progress_container {
+  place-self: center;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-area: progress;
+}
+
+.landingPage_sliderContainer .landingPage_sliderControl .slider_backContainer {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: back;
+}
+
+.landingPage_sliderContainer .landingPage_sliderControl .slider_forwardContainer {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: forward;
+  justify-self: flex-end;
 }
 
 .landingPage_sliderContainer .landingPage_sliderImage {
@@ -465,6 +509,36 @@ main {
   -ms-grid-row-span: 2;
   -ms-grid-column: 4;
   grid-area: slider;
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+}
+
+.landingPage_sliderContainer .landingPage_sliderImage .sliderImage_rocketPhoto {
+  background-image: url(/Content/img/rocket.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+}
+
+.landingPage_sliderContainer .landingPage_sliderImage .sliderImage_moonPhoto {
+  background: url(/Content/img/background-moon.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+}
+
+.sliderControl {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  margin-top: 25px;
+  font-family: "Merriwheater", serif;
+}
+
+.slider_forwardContainer .sliderControl {
+  color: #19BD9C;
 }
 
 .ctaButton {
@@ -476,6 +550,30 @@ main {
   color: white;
   text-decoration: none;
   margin-top: 5%;
+}
+
+.progress_container {
+  width: 100%;
+  height: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.progress_container div {
+  display: inline;
+  width: 100%;
+  height: 100%;
+}
+
+.progress_container .progress_bar {
+  background-color: #19BD9C;
+  border-radius: 15px 0 0 15px;
+}
+
+.progress_container .progress_background {
+  background-color: white;
+  border-radius: 0 15px 15px 0;
 }
 
 *, * + * {

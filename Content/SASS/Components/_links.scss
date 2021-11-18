@@ -1,0 +1,25 @@
+.sliderControl{
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    margin-top: 25px;
+    font-family: "Merriwheater", serif;
+
+
+}
+
+.slider_forwardContainer .sliderControl{
+    color: $primary-color;
+}
+
+.ctaButton{
+    font-size: 20px;
+    font-weight: 600;
+    font-style: oblique;
+    background-color: #FF2A5C;
+    padding: 1em;
+    color: white;
+    text-decoration: none;
+    margin-top: 5%;
+
+}
